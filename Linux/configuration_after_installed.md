@@ -11,9 +11,21 @@ Software & Updates > Download From > Other > Select Best Server
 
 [shadowsocks](https://www.mystery0.vip/2017/01/12/Ubuntu%E4%BD%BF%E7%94%A8Shadowsocks-qt5%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/)
 
+[ss-ppa](https://launchpad.net/~hzwhuang/+archive/ubuntu/ss-qt5)
+
+[does not have a Release file](https://www.qetee.com/linux/deepin-shadowsocks.html)
+
+$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
+# 改里面的bionic为artful,bionic的版本还没更新
+$ sudo vim /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list
+$ sudo apt-get update
+$ sudo apt-get install shadowsocks-qt5
+
 ## 安装Chrome和搜狗
 
 下载deb包双击安装
+
+sogou: 配置语言fcitx,注销后再fcitx configuration里增加搜狗
 
 ## 升级Python
 
@@ -54,6 +66,15 @@ $ sudo ln -s /usr/python36/bin/pip3 /usr/bin/pip3.6
 $ pip3.6 install ipython
 ```
 
+## Ubuntu18.04自带Python3
+
+安装pip3
+```
+# 不要手贱更新倒pip10.0.1,会出现ImportError: cannot import name 'main'
+# 9.0.1用一下就好了
+$ sudo apt install python3-venv python3-pip
+```
+
 ## 安装ipython和pipenv
 
 ```bash
@@ -85,4 +106,9 @@ $ sudo apt install tmux -y
 ```bash
 # atlednolispe @ atlednolispe-Ubuntu in ~ [22:16:27]
 $ sudo apt install openssh-server -y
+
+# 更新ssh认证信息
+$ ssh-keygen -R ip_address
+
+$ ssh ...
 ```
