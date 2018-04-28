@@ -15,11 +15,16 @@ Software & Updates > Download From > Other > Select Best Server
 
 [does not have a Release file](https://www.qetee.com/linux/deepin-shadowsocks.html)
 
+```
 $ sudo add-apt-repository ppa:hzwhuang/ss-qt5
 # 改里面的bionic为artful,bionic的版本还没更新
 $ sudo vim /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list
 $ sudo apt-get update
 $ sudo apt-get install shadowsocks-qt5
+
+# Local Server Type选择HTTP(S)
+# 否则pip报错Missing dependencies for SOCKS support
+```
 
 ## 安装Chrome和搜狗
 
