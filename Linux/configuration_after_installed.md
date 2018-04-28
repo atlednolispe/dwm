@@ -78,6 +78,26 @@ $ pip3.6 install ipython
 # 不要手贱更新倒pip10.0.1,会出现ImportError: cannot import name 'main'
 # 9.0.1用一下就好了
 $ sudo apt install python3-venv python3-pip
+
+# 修复ImportError: cannot import name 'main'
+$ sudo vim /usr/bin/pip3
+from pip._internal import main
+
+$ pip3 install ipython
+
+# launchpadlib 1.10.6 requires testresources, which is not installed
+$ pip3 install testresources --user
+
+$ pip3 install pipenv
+
+[pipenv: command not found](https://stackoverflow.com/questions/46391721/pipenv-command-not-found)
+# 增加pipenv到PATH
+$ vim .zshrc
+PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
+PATH="$PATH:$PYTHON_BIN_PATH"
+
+export PATH
+
 ```
 
 ## 安装ipython和pipenv
