@@ -1,11 +1,11 @@
-Ubuntu18.04配置andriod环境
+Ubuntu18.04配置android环境
 =========================
 
 ## 安装JDK
 
 [jdk8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-jdk10不兼容andriod-sdk-tools
+jdk10不兼容android-sdk-tools
 
 ```
 # atlednolispe @ ubuntu1804 in ~/Applications [16:30:10]
@@ -17,7 +17,7 @@ PATH="$JAVA_HOME/bin:$PATH"
 export PATH
 ```
 
-## 安装andriod-sdk-tools
+## 安装android-sdk-tools
 
 [Command line tools only](https://developer.android.com/studio/#downloads)
 
