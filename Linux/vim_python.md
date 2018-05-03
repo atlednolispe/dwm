@@ -116,5 +116,12 @@ $ ./install.py --clang-completer
 
 
 ## 还可以尝试通过apt安装ycm,还没试过
+# https://askubuntu.com/questions/541737/how-to-use-vim-youcompleteme
+
 $ sudo apt install vim-youcompleteme -y
+$ sudo apt-get install vim-addon-manager -y
+$ vam install youcompleteme
+
+# 重启terminal即可使用
+
 ```
