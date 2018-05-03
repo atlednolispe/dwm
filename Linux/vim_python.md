@@ -116,5 +116,5 @@ $ ./install.py --clang-completer
 
 
 ## 还可以尝试通过apt安装ycm,还没试过
-$ sudo apt uninstall vim-youcompleteme -y
+$ sudo apt install vim-youcompleteme -y
 ```
