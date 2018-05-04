@@ -126,6 +126,25 @@ $ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/
 $ sudo apt install tmux -y
 ```
 
+## 安装两个实用软件zeal & albert
+
+[Albert](https://albertlauncher.github.io/docs/installing/)
+
+```bash
+$ sudo apt-get install zeal
+
+
+$ wget -nv -O Release.key \
+  https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+$ sudo apt-key add - < Release.key
+$ sudo apt-get update
+
+$ sudo -i
+# echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_Testing/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list
+# apt-get update
+# apt-get install albert
+```
+
 ## 开启ssh服务
 
 ```bash
