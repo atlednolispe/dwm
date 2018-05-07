@@ -75,6 +75,15 @@ filetype plugin indent on    " required
 
 let g:syntastic_python_checkers = ['pylint']
 
+" keyboard mapping
+inoremap jk <Esc>
+inoremap <Esc> <nop>
+
+" syntax
+syntax enable
+syntax on
+
+
 # 安装插件
 PluginInstall
 BundleInstall
