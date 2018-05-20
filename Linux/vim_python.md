@@ -51,6 +51,11 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
+" Smart auto-indentation for Python
+Plugin 'vim-scripts/indentpython.vim'
+" Rich python syntax highlighting
+Plugin 'kh3phr3n/python-syntax'
+
 " 据说ycm包含jedi
 " Plugin 'davidhalter/jedi-vim'
 
@@ -83,6 +88,31 @@ inoremap <Esc> <nop>
 syntax enable
 syntax on
 
+" PEP8
+set textwidth=79  " lines longer than 79 columns will be broken
+set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+set tabstop=4     " a hard TAB displays as 4 columns
+set expandtab     " insert spaces when hitting TABs
+set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set shiftround    " round indent to multiple of 'shiftwidth'
+set autoindent    " align the new line indent with the previous line
+
+" Point YCM to the Pipenv created virtualenv, if possible
+" At first, get the output of 'pipenv --venv' command.
+let pipenv_venv_path = system('pipenv --venv')
+" The above system() call produces a non zero exit code whenever
+" a proper virtual environment has not been found.
+" So, second, we only point YCM to the virtual environment when
+" the call to 'pipenv --venv' was successful.
+" Remember, that 'pipenv --venv' only points to the root directory
+" of the virtual environment, so we have to append a full path to
+" the python executable.
+if shell_error == 0
+  let venv_path = substitute(pipenv_venv_path, '\n', '', '')
+  let g:ycm_python_binary_path = venv_path . '/bin/python'
+else
+  let g:ycm_python_binary_path = 'python'
+endif
 
 # 安装插件
 PluginInstall
@@ -134,3 +164,7 @@ $ vam install youcompleteme
 # 重启terminal即可使用
 
 ```
+
+# ycm在pipenv环境下无法自动补全
+
+[ycm在virtualenv和pipenv下的自动补全](https://www.linkedin.com/pulse/can-vim-detect-pipenv-environment-vagiz-duseev)
