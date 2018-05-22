@@ -15,6 +15,7 @@ $ vim ~/.vimrc
 
 " 修改为以下内容
 set nocompatible              " be iMproved, required
+set backspace=2               " backspace delete
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -113,6 +114,15 @@ if shell_error == 0
 else
   let g:ycm_python_binary_path = 'python'
 endif
+
+# backspace can't delete other lines
+
+[backspace don't work](http://cenalulu.github.io/linux/why-my-backspace-not-work-in-vim/)
+
+# COMMAND + C/V
+
+[paste compatible](https://stackoverflow.com/questions/5585129/pasting-code-into-terminal-window-into-vim-on-mac-os-x)
+:set paste/nopaste
 
 # 安装插件
 PluginInstall
