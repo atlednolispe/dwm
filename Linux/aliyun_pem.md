@@ -19,3 +19,16 @@ $ scp -i hk.pem root@ip:/home/user/.ssh/hk_user.pem .
 
 $ ssh -i hk_atled.pem user@ip
 ```
+
+## Linux 免密登录
+
+```
+# 生成公钥,一路回车
+$ ssh-keygen -t rsa
+
+# 复制公钥到远程主机
+$ ssh-copy-id user@host_ip
+
+# 可以成功免密登录
+$ ssh user@host_ip
+```
