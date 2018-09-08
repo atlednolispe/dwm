@@ -4,6 +4,8 @@
 [aliyun阿里云秘钥对连接](https://blog.csdn.net/musuny/article/details/78507954)
 
 ```
+# 本质上就是ssh-keygen生成秘钥对,然后上传公钥到server的authorized_keys
+
 # 创建用户
 # groupadd aliyun
 # useradd -m user -g aliyun
